@@ -24,7 +24,7 @@
     <!-- vendor css -->
     <link rel="stylesheet" href="/static/assets/css/style.css">
     <!-- dark mode css -->
-    <link rel="stylesheet" href="/static/assets/css/dark.css">
+    <link rel="stylesheet" href="{% static '/assets/css/editor.css' %}">
     <!-- Specific CSS goes HERE -->
     {% block stylesheets %}{% endblock stylesheets %}
 
@@ -45,6 +45,7 @@
 
 
     {% block content %}{% endblock content %}
+
 
     <!-- Specific Page JS goes HERE  -->
     {% block javascripts %}{% endblock javascripts %}

@@ -55,13 +55,13 @@ var jsCode = [
 ].join('\n');
 
 // Create the Models
-jsModel = monaco.editor.createModel(jsCode,"javascript")
-htmlModel = monaco.editor.createModel(htmlCode,"html")
-cssModel = monaco.editor.createModel(cssCode,"css")
+jsModel = monaco.editor.createModel(jsCode, "javascript")
+htmlModel = monaco.editor.createModel(htmlCode, "html")
+cssModel = monaco.editor.createModel(cssCode, "css")
 
 // settings
 editor_settings = {
-    theme: "vs-dark",
+    theme: "vs",
     lineNumbers: 'on',
     glyphMargin: false,
     vertical: '100vh',
