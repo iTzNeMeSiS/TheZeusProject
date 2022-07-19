@@ -1,5 +1,6 @@
 {% extends "layouts/base.html" %}
 {% load i18n %}
+{% load static %}
 {% block title %} {% trans 'Dashboard' %} {% endblock %} 
 
 <!-- Specific CSS goes HERE -->
@@ -22,7 +23,7 @@
                                         <div class="card card-body pb-5 shadow-sm mb-4 dashboard">
                                             <div class="dash-container">
                                                 <div class="dash-item">
-                                                    <span class="span-dash"><img src="{{ user.profile.get_avatar }}" class="user-avatar large-avatar rounded-circle" alt=" ">
+                                                    <span class="span-dash"><img src="{{ user.profile.get_avatar }}" class="user-avatar large-avatar rounded-circle" alt="">
                                                         <h3 class="dash-username">{{ user.username }}</h3></span>
                                                 </div>
                                             </div>

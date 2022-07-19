@@ -1,17 +1,75 @@
-{% extends "layouts/base.html" %}
-
+{% extends "layouts/base-code.html" %}
+{% load static %}
+{% load i18n %}
 {% block title %} Code {% endblock %} 
 
 <!-- Specific CSS goes HERE -->
-{% block stylesheets %}{% endblock stylesheets %}
+{% block stylesheets %}
+<script src="/static/assets/js/vendor-all.min.js"></script>
+<script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- Notyf -->
+<script src="{% static 'assets/vendor/notyf/notyf.min.js' %}"></script>
+<script type="application/javascript" src="{% static 'assets/js/notify.js' %}"></script>
+<script>
+    {% if messages %}
+        {% for message in messages %}
+            notification['{{ message.tags }}']("<caption>" + '{{ message|capfirst }}' + "</caption>");
+        {% endfor %}
+    {% endif %}
+</script>
+
+<!-- Main JS -->
+<script src="{% static 'assets/js/tzp.min.js' %}"></script>
+<link rel="stylesheet" href="{% static '/assets/css/editor.css' %}">
+<link data-name="vs/editor/editor.main" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0-dev.20220706/min/vs/editor/editor.main.min.css" integrity="sha512-AnrqE+j2i9BCEuBVaY7xLONU+C7VrB+TYxhQ6cNjgjLEiUuA+pAysKzlYKdimEia87X1C5GL6I5QPrBoMdCJvA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script>var require = { paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0-dev.20220706/min/vs' } };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0-dev.20220706/min/vs/loader.min.js" integrity="sha512-6bIYsGqvLpAiEBXPdRQeFf5cueeBECtAKJjIHer3BhBZNTV3WLcLA8Tm3pDfxUwTMIS+kAZwTUvJ1IrMdX8C5w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0-dev.20220706/min/vs/editor/editor.main.nls.min.js" integrity="sha512-1Cs46QUl+QX8DXuquC0GM8X4nOX5C6FvwHmYEZqI1NrZD15ZrD9aD2xUNortGWpEVo6AdR5sEJuSgNt4E56C2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0-dev.20220706/min/vs/editor/editor.main.min.js" integrity="sha512-2Apg4aaVFFIl/XelYhrcoT+KoEYsbw9ZKa1hGSKIK8C+lyo993L5cvHHdjdDMGugBuQi5m8kgjeYjmc0RYpQdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock stylesheets %}
 
 {% block content %}
-
     <!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
 
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <!-- [ breadcrumb ] start -->
+
+                <!-- [ breadcrumb ] end -->
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <div class="col-12 col-xl-12">
+                                <div class="button-container">
+                                    <ul class="buttons">
+                                        <li><button id="change_html">HTML</button></li>
+                                        <li><button id="change_css">CSS</button></li>
+                                        <li><button id="change_js">JS</button></li>
+                                    </ul>
+                                </div>
+                                <main class="main">
+                                    <section>
+                                        <pre id="CodeBlock" data-lang='html'></pre>
+                                        <script src="{% static 'assets/js/editor.js' %}"> </script>
+                                    </section>
+                                    <iframe id='output' title="output" sandbox="allow-scripts" width='100%'></iframe>
+                                </main>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- [ Main Content ] end -->            
 
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
-{% block javascripts %}{% endblock javascripts %}
+{% block javascripts %}
+<script src="/static/assets/js/menu.min.js"></script>
+<script src="/static/assets/js/dark-mode.js"></script>
+{% endblock javascripts %}
