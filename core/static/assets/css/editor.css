@@ -210,8 +210,8 @@ body.dark .pcoded-header .main-search.open .input-group .search-close {
     display: flex;
 }
 
-.pane {
-    min-width: 20vw;
+.pane.right {
+    width: 100%;
 }
 
 

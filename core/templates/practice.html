@@ -59,15 +59,13 @@
                                     </section>
                                 </main> {% endcomment %}
                                 <div class="wrapper">
-  
                                     <div class="pane left">
+                                        <iframe id='output' title="output" sandbox="allow-scripts"></iframe>
+                                    </div>
+                                    <div class="pane right">
                                         <pre id="CodeBlock" data-lang='html'></pre>
                                         <script src="{% static 'assets/js/editor.js' %}"> </script>
-                                    </div>
-                                    
-                                    <div class="pane right">
-                                        <iframe id='output' title="output" sandbox="allow-scripts"></iframe>
-                                      <div class="gutter"></div>
+                                        <div class="gutter"></div>
                                     </div>
                                   </div>
                             </div>
