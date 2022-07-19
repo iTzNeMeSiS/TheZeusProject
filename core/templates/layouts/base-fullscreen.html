@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Primary Meta Tags -->
+<title>
+    The Zeus Project - {% block title %}{% endblock %}
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="The Zeus Project - Learn to code free">
+<meta name="author" content="Themesberg">
+<meta name="description" content="The Zeus Project is a open source free learning platform where anybody can learn how to be a web developer.">
+<meta name="keywords" content="learn html, learn css, learn javascript, learn web development" />
+<link rel="canonical" href="">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="">
+<meta property="og:title" content="The Zeus Project - Learn to code free">
+<meta property="og:description" content="The Zeus Project is a open source free learning platform where anybody can learn how to be a web developer.">
+<meta property="og:image" content="">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="">
+<meta property="twitter:title" content="The Zeus Project - Learn to code free">
+<meta property="twitter:description" content="The Zeus Project is a open source free learning platform where anybody can learn how to be a web developer.">
+<meta property="twitter:image" content="">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="/static/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon.ico">
+<link rel="manifest" href="/static/assets/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="/static/assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Fontawesome -->
+<link type="text/css" href="/static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<!-- Notyf -->
+<link type="text/css" href="/static/assets/vendor/notyf/notyf.min.css" rel="stylesheet">
+
+<!-- Volt CSS -->
+<link type="text/css" href="/static/assets/css/main.css" rel="stylesheet">
+
+    <!-- Specific Page CSS goes HERE  -->
+    {% block stylesheets %}{% endblock stylesheets %}
+
+</head> 
+<body class="{% block body_class %}{% endblock body_class %}">
+           
+    {% block content %}{% endblock content %}
+
+    {% include 'includes/index-scripts.html' %}    
+    
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}{% endblock javascripts %}
+
+</body>
+</html>

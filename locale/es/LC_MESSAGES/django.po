@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-16 22:53-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: core/templates/change_language.html:24
+msgid "Change language"
+msgstr "Cambiar idioma"
+
+#: core/templates/change_language.html:29
+msgid "Select the language"
+msgstr "Seleccione el idioma"
+
+#: core/templates/change_language.html:38
+#: env/lib/python3.10/site-packages/django/forms/widgets.py:397
+msgid "Change"
+msgstr "Cambio"
+
+#: core/templates/includes/navigation.html:127
+msgid "Settings"
+msgstr "Ajustes"
+
+#: core/templates/includes/navigation.html:132
+#: core/templates/includes/sidebar.html:98
+msgid "Logout"
+msgstr "cerrar sesión"
+
+#: core/templates/includes/navigation.html:135
+msgid "Language"
+msgstr "Cambiar idioma"
+
+#: core/templates/includes/sidebar.html:17
+msgid "Navigation"
+msgstr "Navegación"
+
+#: core/templates/includes/sidebar.html:22
+msgid "Dashboard"
+msgstr "Estrellarse"
+
+#: core/templates/includes/sidebar.html:53
+msgid "Foundations"
+msgstr "Cimientos"
+
+#: core/templates/includes/sidebar.html:67
+msgid "Paths"
+msgstr "Caminos"
+
+#: core/templates/includes/sidebar.html:109
+msgid "Support"
+msgstr "Apoyo"
+
+#: customers/models.py:11
+msgid "Male"
+msgstr "Masculino"
+
+#: customers/models.py:12
+msgid "Female"
+msgstr "Femenina"
+
+#: customers/models.py:29
+msgid "Profile"
+msgstr "Perfil"
+
+#: customers/models.py:30
+msgid "Profiles"
+msgstr "Perfiles"
+
+#: customers/templates/customers/profile.html:71
+msgid "Profile information"
+msgstr "Información del perfil"
+
+#: customers/templates/customers/profile.html:75
+msgid "First Name"
+msgstr "Nombre de pila"
+
+#: customers/templates/customers/profile.html:77
+msgid "Enter your first name"
+msgstr "Introduzca su nombre aquí"
+
+#: customers/templates/customers/profile.html:83
+msgid "Last Name"
+msgstr "Apellido"
+
+#: customers/templates/customers/profile.html:85
+msgid "Enter your last name"
+msgstr "Ingrese su apellido aquí"
+
+#: customers/templates/customers/profile.html:93
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: customers/templates/customers/profile.html:95
+msgid "name@email.com"
+msgstr "nombre@email.com"
+
+#: customers/templates/customers/profile.html:100
+msgid "Save All"
+msgstr "Salvar a todos"
+
+#: customers/templates/customers/profile.html:108
+msgid "Select profile photo"
+msgstr "Seleccionar foto de perfil"
+
+#: customers/templates/customers/profile.html:118
+msgid "Choose Image"
+msgstr "elegir imagen"
+
+#: customers/templates/customers/profile.html:119
+msgid "JPG, GIF or PNG. Max size of 800K"
+msgstr "JPG, GIF or PNG. Tamaño máximo de 800K"
+
+#: customers/views.py:33
+msgid "Profile saved successfully"
+msgstr "Perfil guardado con éxito"
+

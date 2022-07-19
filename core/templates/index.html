@@ -1,0 +1,365 @@
+{% load i18n %}
+
+{% get_current_language as language_code %}
+
+<!DOCTYPE html>
+<html lang="{{ language_code }}">
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Primary Meta Tags -->
+<title>
+    The Zeus Project - Home   
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="The Zeus Project - Learn to code free.">
+<meta name="author" content="The Zeus Project">
+<meta name="description" content="The Zeus Project is a open source free learning platform where anybody can learn how to be a web developer.">
+<meta name="keywords" content="learn html, learn css, learn javascript, learn web development" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="">
+<meta property="og:title" content="The Zeus Project - Learn to code free.">
+<meta property="og:description" content="The Zeus Project is a open source free learning platform where anybody can learn how to be a web developer.">
+<meta property="og:image" content="">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="">
+<meta property="twitter:title" content="The Zeus Project - Learn to code free.">
+<meta property="twitter:description" content="The Zeus Project is a open source free learning platform where anybody can learn how to be a web developer.">
+<meta property="twitter:image" content="">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="/static/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon.ico">
+<link rel="manifest" href="/static/assets/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="/static/favicon.ico" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Fontawesome -->
+<link type="text/css" href="/static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<!-- Notyf -->
+<link type="text/css" href="/static/assets/vendor/notyf/notyf.min.css" rel="stylesheet">
+
+<!-- Main CSS -->
+<link type="text/css" href="/static/assets/css/main.css" rel="stylesheet">
+
+<style>.item{text-align: left !important;}</style>
+<!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+
+</head>
+
+<body>
+
+    <header class="header-global">
+        <nav>
+            <ul class="menu">
+              <li class="logo"><a class="text-white" href="#">The Zeus Project</a></li>
+              <li class="item"><a href="/dashboard">{% trans 'Dashboard' %}</a></li>
+              {% if request.user.is_authenticated %}
+              <li class="item"><a href="{% url 'profile' %}">{% trans 'Settings' %}</a></li>
+              {% endif %}
+              <li class="item"><a href="#">{% trans 'About' %}</a>
+                <li class="item"><a href="#">{% trans 'Contact' %}</a>
+              </li>
+              {% if request.user.is_authenticated %}
+              <li class="item button secondary">
+                <a href="{% url 'logout' %}" class="btn btn-outline-soft d-none d-lg-block"> <span class="fas fa-sign-out-alt mr-2"></span> {% trans 'Logout' %}</a>
+              </li>
+              {% else %}
+              <li class="item">
+                <!-- Button Modal -->
+                <a type="button" class="btn btn-gray" data-toggle="modal" data-target="#modal-form">{% trans 'Login' %}</a>
+                <!-- Modal Content -->
+                <div class="modal fade" id="modal-form" tabindex="-1" aria-labelledby="modal-form" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body p-0">
+                                <div class="card border-light p-4">
+                                    <button type="button" class="btn-close ml-auto" data-dismiss="modal" aria-label="Close"></button>
+                                    <div class="card-header border-0 text-center pb-0">
+                                        <h2 class="h4">{% trans 'Sign in to our platform' %}</h2>
+                                        <span>{% trans 'Login here using your username and password' %}</span>   
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="#" class="mt-4">
+                                            <!-- Form -->
+                                            <div class="form-group mb-4">
+                                                <label for="login_email">{% trans 'Your Email' %}</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon1"><span class="fas fa-envelope"></span></span>
+                                                    <input type="email" class="form-control" placeholder="{% trans 'example@email.com' %}" id="login_email" required="">
+                                                </div>  
+                                            </div>
+                                            <!-- End of Form -->
+                                            <div class="form-group">
+                                                <!-- Form -->
+                                                <div class="form-group mb-4">
+                                                    <label for="login_password">{% trans 'Your Password' %}</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text" id="basic-addon2"><span class="fas fa-unlock-alt"></span></span>
+                                                        <input type="password" placeholder="{% trans 'Password' %}" class="form-control" id="login_password" required="">
+                                                    </div>  
+                                                </div>
+                                                <!-- End of Form -->
+                                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="remember">
+                                                        <label class="form-check-label" for="remember">
+                                                            {% trans 'Remember me' %}
+                                                        </label>
+                                                    </div>
+                                                    <div><a href="#" class="small text-right">{% trans 'Lost password?' %}</a></div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-block btn-primary">{% trans 'Sign in' %}</button>
+                                        </form>
+                                        <div class="mt-3 mb-4 text-center">
+                                            <span class="font-weight-normal">{% trans 'or login with' %}</span>
+                                        </div>
+                                        <div class="d-flex justify-content-center my-4">
+                                            <a href="#" class="btn btn-icon-only btn-pill btn-outline-light text-facebook mr-2" type="button" aria-label="facebook button" title="facebook button">
+                                                <span aria-hidden="true" class="fab fa-facebook-f"></span>
+                                            </a>
+                                            <a href="#" class="btn btn-icon-only btn-pill btn-outline-light text-twitter mr-2" type="button" aria-label="twitter button" title="twitter button">
+                                                <span aria-hidden="true" class="fab fa-twitter"></span>
+                                            </a>
+                                            <a href="#" class="btn btn-icon-only btn-pill btn-outline-light text-facebook" type="button" aria-label="github button" title="github button">
+                                                <span aria-hidden="true" class="fab fa-github"></span>
+                                            </a>
+                                        </div>
+                                        <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                                            <span class="span-login font-weight-normal">
+                                                {% trans 'Not registered?' %}
+                                                <a style="color:black;"  data-dismiss="modal" type="button" data-toggle="modal" data-target="#modal-form-signup" class="font-weight-bold">{% trans 'Create account' %}</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Modal Content -->
+                </li>
+                <li class="item">
+                    <!-- Button Modal -->
+                    <a type="button" class="btn btn-outline-secondary outline" data-toggle="modal" data-target="#modal-form-signup">{% trans 'Sign up' %}</a>
+                    <!-- Modal Content -->
+                    <div class="modal fade" id="modal-form-signup" tabindex="-1" role="dialog" aria-labelledby="modal-form-signup" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body p-0">
+                                    <div class="card p-4">
+                                        <button type="button" class="btn-close ml-auto" data-dismiss="modal" aria-label="Close"></button>
+                                        <div class="card-header border-0 text-center pb-0">
+                                            <h2 class="mb-0 h5">{% trans 'Create Account' %}</h2>                               
+                                        </div>
+                                        <div class="card-body">
+                                            <form action="#">
+                                                <!-- Form -->
+                                                <div class="form-group mb-4">
+                                                    <label for="email">{% trans 'Your Email' %}</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
+                                                        <input type="email" class="form-control" placeholder="{% trans 'example@email.com' %}" id="email" required="">
+                                                    </div>  
+                                                </div>
+                                                <!-- End of Form -->
+                                                <div class="form-group">
+                                                    <!-- Form -->
+                                                    <div class="form-group mb-4">
+                                                        <label for="password">{% trans 'Your Password' %}</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text" id="basic-addon4"><span class="fas fa-unlock-alt"></span></span>
+                                                            <input type="password" placeholder="{% trans 'Password' %}" class="form-control" id="password" required="">
+                                                        </div>  
+                                                    </div>
+                                                    <!-- End of Form -->
+                                                    <!-- Form -->
+                                                    <div class="form-group mb-4">
+                                                        <label for="password_confirm">{% trans 'Confirm Password' %}</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text" id="basic-addon5"><span class="fas fa-unlock-alt"></span></span>
+                                                            <input type="password" placeholder="{% trans 'Confirm Password' %}" class="form-control" id="password_confirm" required="">
+                                                        </div>  
+                                                    </div>
+                                                    <!-- End of Form -->
+                                                    <div class="form-check mb-4">
+                                                        <input class="form-check-input" type="checkbox" value="" id="terms">
+                                                        <label class="span-login form-check-label" for="terms">
+                                                            {% trans 'I agree to the' %} <a id="black" href="#">{% trans 'terms and conditions' %}</a>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-block btn-primary">{% trans 'Sign up' %}</button>
+                                            </form>
+                                            <div class="mt-3 mb-4 text-center">
+                                                <span class="font-weight-normal">{% trans 'or' %}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-center my-4">
+                                                <a href="#" class="btn btn-icon-only btn-pill btn-outline-light text-facebook mr-2" type="button" aria-label="facebook button" title="facebook button">
+                                                    <span aria-hidden="true" class="fab fa-facebook-f"></span>
+                                                </a>
+                                                <a href="#" class="btn btn-icon-only btn-pill btn-outline-light text-twitter mr-2" type="button" aria-label="twitter button" title="twitter button">
+                                                    <span aria-hidden="true" class="fab fa-twitter"></span>
+                                                </a>
+                                                <a href="#" class="btn btn-icon-only btn-pill btn-outline-light text-facebook" type="button" aria-label="github button" title="github button">
+                                                    <span aria-hidden="true" class="fab fa-github"></span>
+                                                </a>
+                                            </div>
+                                            <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                                                <span class="font-weight-normal">
+                                                    {% trans 'Already have an account?' %}
+                                                    <a style="color:black;"  data-dismiss="modal" type="button" data-toggle="modal" data-target="#modal-form" class="login-btn font-weight-bold">{% trans 'Login here' %}</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Modal Content -->
+                </li>
+              {% endif %}
+              <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            </ul>
+          </nav>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main style="height: 100vh;">
+
+        <div class="preloader bg-soft flex-column justify-content-center align-items-center">
+            <img class="loader-element animate__animated animate__jackInTheBox" src="/static/assets/img/brand/light.svg" height="120" alt="Volt logo">
+        </div>
+
+
+
+        {% comment %} <h1>{% trans 'Hello, my name is Dre' %}</h1>
+        <h1>{% trans 'How are you?' %}</h1> {% endcomment %}
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer py-6 bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="navbar-brand-dark mb-4" height="60" src="/static/assets/img/brand/light.svg" alt="Logo light">
+                    <p>{% trans 'The Zeus Project is a open source free learning platform where anybody can learn how to be a web developer.' %}</p>
+                    <ul class="social-buttons mb-5 mb-lg-0">
+                        <li>
+                            <a href="https://twitter.com/" aria-label="twitter social link" class="icon-white mr-2">
+                                <span class="fab fa-twitter"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" class="icon-white mr-2" aria-label="facebook social link">
+                                <span class="fab fa-facebook"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/" aria-label="github social link" class="icon-white mr-2">
+                                <span class="fab fa-github"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dribbble.com/" class="icon-white" aria-label="dribbble social link" >
+                                <span class="fab fa-dribbble"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-5 mb-lg-0">
+                    <span class="h5">{% trans 'The Zeus Project' %}</span>
+                    <ul class="links-vertical mt-2">
+                        <li><a target="_blank" href="">{% trans 'Blog' %}</a></li>
+                        <li><a target="_blank" href="">{% trans 'Products' %}</a></li>
+                        <li><a target="_blank" href="">{% trans 'About Us' %}</a></li>
+                        <li><a target="_blank" href="">{% trans 'Contact Us' %}</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-5 mb-lg-0">
+                    <span class="h5">{% trans 'Other' %}</span>
+                    <ul class="links-vertical mt-2">
+                        <li><a href="" target="_blank">{% trans 'Docs' %}
+                                <span class="badge badge-sm bg-secondary text-dark ml-2">v1.2</span></a></li>
+                        <li><a href="" target="_blank">{% trans 'Changelog' %}</a></li>
+                        <li><a target="_blank" href="">License</a>
+                        </li>
+                        <li><a target="_blank" href="">{% trans 'Support' %}</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 mb-5 mb-lg-0">
+                    <span class="h5 mb-3 d-block">{% trans 'Subscribe' %}</span>
+                    <form action="#">
+                        <div class="form-row mb-2">
+                            <div class="col-12">
+                                <input type="email" class="form-control mb-2" placeholder="{% trans 'example@email.com' %}" name="email" aria-label="Subscribe form" required>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-gray text-dark shadow-soft btn-block" data-loading-text="Sending">
+                                    <span>{% trans 'Subscribe' %}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="text-muted font-small m-0">{% trans 'We will never share your details. See our' %} <a class="text-white" href="#">{% trans 'Privacy Policy' %}</a></p>
+                </div>
+            </div>
+            <hr class="bg-gray my-5">
+            <div class="row">
+                <div class="col mb-md-0">
+                    <a href="#" target="_blank" class="d-flex justify-content-center">
+                        <img src="/static/assets/img/brand/light.svg" height="50" class="mb-3" alt="The Zeus Project Logo">
+                    </a>
+                <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
+                    <p class="font-weight-normal font-small mb-0">
+                        &copy; The Zeus Project 2021-<span class="current-year">2022</span> - All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% include 'includes/index-scripts.html' %}
+
+</body>
+</html>

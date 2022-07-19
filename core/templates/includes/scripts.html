@@ -1,0 +1,19 @@
+{% load static %}
+
+<script src="/static/assets/js/vendor-all.min.js"></script>
+<script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/assets/js/menu.min.js"></script>
+<script src="/static/assets/js/dark-mode.js"></script>
+<!-- Notyf -->
+<script src="{% static 'assets/vendor/notyf/notyf.min.js' %}"></script>
+<script type="application/javascript" src="{% static 'assets/js/notify.js' %}"></script>
+<script>
+    {% if messages %}
+        {% for message in messages %}
+            notification['{{ message.tags }}']("<caption>" + '{{ message|capfirst }}' + "</caption>");
+        {% endfor %}
+    {% endif %}
+</script>
+
+<!-- Main JS -->
+<script src="{% static 'assets/js/tzp.min.js' %}"></script>

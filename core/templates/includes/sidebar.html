@@ -1,0 +1,228 @@
+{% load i18n %}
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar">
+    <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+            <a href="/" class="b-brand">
+                <div class="b-bg">
+                    {% comment %} <i class="feather icon-home"></i> {% endcomment %}
+                    <img src="/static/assets/img/brand/light.svg" height="50" class="mb-3" alt="The Zeus Project Logo">
+                </div>
+                <span class="b-title">The Zeus Project</span>
+            </a>
+            <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
+        </div>
+        <div class="navbar-content scroll-div">
+            <ul class="nav pcoded-inner-navbar">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>{% trans 'Navigation' %}</label>
+                </li>
+                <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" 
+                    class="nav-item {% if 'index' in segment %} active {% endif %}">
+                    <a href="/dashboard" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span
+                            class="pcoded-mtext">{% trans 'Dashboard' %}</span></a>
+                </li>
+                {% comment %} <li data-username="Profile Page" 
+                    class="nav-item {% if 'profile' in segment %} active {% endif %}">
+                    <a href="/profile" class="nav-link">
+                        <span class="pcoded-micon"><i class="feather icon-user"></i></span>
+                            <span class="pcoded-mtext">Profile Page</span></a>
+                </li>                 {% endcomment %}
+                {% comment %} <li class="nav-item pcoded-menu-caption">
+                    <label>Foundations</label>
+                </li>
+                <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds"
+                    class="nav-item pcoded-hasmenu ">
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span
+                            class="pcoded-mtext">TEST</span></a>
+                    <ul class="pcoded-submenu">
+                        <li class=""><a href="/bc_button.html" class="">Button</a></li>
+                        <li class=""><a href="/bc_badges.html" class="">Badges</a></li>
+                        <li class=""><a href="/bc_breadcrumb-pagination.html" class="">Breadcrumb & paggination</a></li>
+                        <li class=""><a href="/bc_collapse.html" class="">Collapse</a></li>
+                        <li class=""><a href="/bc_tabs.html" class="">Tabs & pills</a></li>
+                        <li class=""><a href="/bc_typography.html" class="">Typography</a></li>
+
+
+                        <li class=""><a href="/icon-feather.html" class="">Feather<span
+                                class="pcoded-badge label label-danger">NEW</span></a></li>
+                    </ul>
+                </li> {% endcomment %}
+                <li class="nav-item pcoded-menu-caption">
+                    <label>{% trans 'Foundations' %}</label>
+                </li>
+                <li
+                    class="nav-item pcoded-hasmenu">
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                            class="pcoded-mtext">{% trans 'Introduction' %}</span></a>
+                    <ul class="pcoded-submenu">
+                        <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'How this Course Will Work' %}</a></li>
+                        <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Introduction to Zeus' %}</a></li>
+                        <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Motivation and Mindset' %}</a></li>
+                        <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Asking For Help' %}</a></li>
+                        <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Join the Zeus Community' %}</a></li>
+                    </ul>
+                </li>
+                <li
+                class="nav-item pcoded-hasmenu">
+                <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                        class="pcoded-mtext">{% trans 'Prerequisites' %}</span></a>
+                <ul class="pcoded-submenu">
+                    <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'Computer Basics' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'How Does the Web Work?' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Installation Overview' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Installations' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Text Editors' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Command Line Basics' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Setting Up Git' %}</a></li>
+                </ul>
+                </li>
+                <li
+                class="nav-item pcoded-hasmenu">
+                <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                        class="pcoded-mtext">{% trans 'Git Basics' %}</span></a>
+                <ul class="pcoded-submenu">
+                    <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'Introduction to Git' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Git Basics' %}</a></li>
+                </ul>
+                </li>
+                <li
+                class="nav-item pcoded-hasmenu">
+                <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                        class="pcoded-mtext">{% trans 'HTML Foundations' %}</span></a>
+                <ul class="pcoded-submenu">
+                    <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'Introduction to HTML and CSS' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Elements and Tags' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'HTML Boilerplate' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Working with Text' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Lists' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Links and Images' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Commit Messages' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Project: PROJECT' %}</a></li>
+                </ul>
+                </li>
+                <li
+                class="nav-item pcoded-hasmenu">
+                <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                        class="pcoded-mtext">{% trans 'CSS Foundations' %}</span></a>
+                <ul class="pcoded-submenu">
+                    <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'CSS Foundations' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Inspecting HTML and CSS' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'The Box Model' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Block and Inline' %}</a></li>
+                </ul>
+                </li>
+                <li
+                class="nav-item pcoded-hasmenu">
+                <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                        class="pcoded-mtext">{% trans 'Flexbox' %}</span></a>
+                <ul class="pcoded-submenu">
+                    <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'Introduction to Flexbox' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Growing and Shrinking' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Axes' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Alignment' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Project: PROJECT' %}</a></li>
+                </ul>
+                </li>
+                <li
+                class="nav-item pcoded-hasmenu">
+                <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                        class="pcoded-mtext">{% trans 'JavaScript Basics' %}</span></a>
+                <ul class="pcoded-submenu">
+                    <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'Fundamentals Part 1' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Fundamentals Part 2' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'JavaScript Developer Tools' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Fundamentals Part 3' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Problem Solving' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Understanding Errors' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Project: PROJECT' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Clean Code' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Installing Node.js' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Fundamentals Part 4' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'DOM Manipulation and Events' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Revisiting PROJECT' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Project: PROJECT' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Fundamentals Part 5' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Project: PROJECT' %}</a></li>
+                </ul>
+                </li>
+                <li
+                class="nav-item pcoded-hasmenu">
+                <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                        class="pcoded-mtext">{% trans 'The Back End' %}</span></a>
+                <ul class="pcoded-submenu">
+                    <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'Introduction to the Back End' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Introduction to Frameworks' %}</a></li>
+                </ul>
+                </li>
+                <li
+                class="nav-item pcoded-hasmenu">
+                <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                        class="pcoded-mtext">{% trans 'Conclusion' %}</span></a>
+                <ul class="pcoded-submenu">
+                    <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'Choose Your Path Forward' %}</a></li>
+                </ul>
+                </li>
+                {% comment %} END FOUNDATIONS {% endcomment %}
+                <li class="nav-item pcoded-menu-caption">
+                    <label>{% trans 'Paths' %}</label>
+                </li>
+                <li
+                    class="nav-item pcoded-hasmenu">
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                            class="pcoded-mtext">{% trans 'Full Stack Ruby on Rails' %}</span></a>
+                    <ul class="pcoded-submenu">
+                        <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'Ruby' %}</a></li>
+                        <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Intermediate HTML and CSS' %}</a></li>
+                        <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Databases' %}</a></li>
+                        <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Ruby on Rails' %}</a></li>
+                        <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Advanced HTML and CSS' %}</a></li>
+                        <li class=""><a href="/login.html" class="" target="_blank">{% trans 'JavaScript' %}</a></li>
+                        <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Getting Hired' %}</a></li>
+                    </ul>
+                </li>
+                <li
+                class="nav-item pcoded-hasmenu">
+                <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                        class="pcoded-mtext">{% trans 'Full Stack JavaScript' %}</span></a>
+                <ul class="pcoded-submenu">
+                    <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'Intermediate HTML and CSS' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'JavaScript' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Advanced HTML and CSS' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'NodeJS' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Getting Hired' %}</a></li>
+                </ul>
+                </li>
+                <li
+                class="nav-item pcoded-hasmenu">
+                <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                        class="pcoded-mtext">{% trans 'Full Stack Django' %}</span></a>
+                <ul class="pcoded-submenu">
+                    <li class="nav-item"><a href="/register.html" class="" target="_blank">{% trans 'Python' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Intermediate HTML and CSS' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Databases' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'JavaScript' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Advanced HTML and CSS' %}</a></li>
+                    <li class=""><a href="/login.html" class="" target="_blank">{% trans 'Getting Hired' %}</a></li>
+                </ul>
+                </li>
+                {% comment %} END PATHS {% endcomment %}
+                <li class="nav-item pcoded-menu-caption">
+                    <label>{% trans 'More Resources' %}</label>
+                </li>                    
+                <li data-username="Support Page" class="nav-item ">
+                    <a href="#" class="nav-link">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-headphones"></i>
+                        </span>
+                        <span class="pcoded-mtext">{% trans 'Support' %}</span>
+                    </a>
+                    <a href="{% url 'logout' %}" class="nav-link">
+                        <span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">{% trans 'Logout' %}</span>
+                    </a>
+                </li>                
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- [ navigation menu ] end -->
