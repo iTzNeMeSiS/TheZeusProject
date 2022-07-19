@@ -1,7 +1,63 @@
+var htmlCode = [
+	'<h1>I am a headline made with HTML</h1>',
+	'<p id="demo">And I am a simple text paragraph. The color of this text is styled with CSS. Click the button below to chage my color through the power of JavaScript.</p>',
+	'<button type="button" onclick="Green()">Change the text color above to green</button>',
+    '<button type="button" onclick="Red()">Change the text color above to red</button>',
+    '<button type="button" onclick="Blue()">Change the text color above to blue</button>'
+].join('\n');
+
+var cssCode = [
+	'body {',
+	'	font-family: sans-serif;',
+	'	text-align: center;',
+	'	padding: 3rem;',
+	'	font-size: 1.125rem;',
+	'	line-height: 1.5;',
+	'	transition: all 725ms ease-in-out;',
+    '}',
+    '',
+    'h1 {',
+    '	font-size: 2rem;',
+    '	font-weight: bolder;',
+    '	margin-bottom: 1rem;',
+    '}',
+    '',
+    'p {',
+    '	margin-bottom: 1rem;',
+    '	color: tomato;',
+    '}',
+    '',
+    'button {',
+    '	cursor: pointer;',
+    '	appearance: none;',
+    '	border-radius: 4px;',
+    '	font-size: 1.25rem;',
+    '	padding: 0.75rem 1rem;',
+    '	border: 1px solid navy;',
+    '	background-color: dodgerblue;',
+    '	color: white;',
+    'margin-top: 10px;',
+    '}'
+].join('\n');
+
+var jsCode = [
+	'function Green() {',
+    '  document.getElementById("demo").style.color = "green";',
+	'}',
+    '',
+    'function Blue() {',
+    '  document.getElementById("demo").style.color = "blue";',
+	'}',
+    '',
+    'function Red() {',
+    '  document.getElementById("demo").style.color = "red";',
+	'}'
+].join('\n');
+
 // Create the Models
-jsModel = monaco.editor.createModel("","javascript")
-htmlModel = monaco.editor.createModel("<h1>Welcome to ICode</h1> ","html")
-cssModel = monaco.editor.createModel("h1 { color: black;}","css")
+jsModel = monaco.editor.createModel(jsCode,"javascript")
+htmlModel = monaco.editor.createModel(htmlCode,"html")
+cssModel = monaco.editor.createModel(cssCode,"css")
 
 // settings
 editor_settings = {
