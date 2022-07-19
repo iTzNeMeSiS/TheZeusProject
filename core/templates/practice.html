@@ -47,13 +47,30 @@
                                     <li><button id="change_js">JS</button></li>
                                 </ul>
                             </div>
-                            <main class="main">
-                                <iframe id='output' title="output" sandbox="allow-scripts" width='100%'></iframe>
-                                <section>
-                                    <pre id="CodeBlock" data-lang='html'></pre>
-                                    <script src="{% static 'assets/js/editor.js' %}"> </script>
-                                </section>
-                            </main>
+                            {% comment %} <div class="wrapper"> {% endcomment %}
+                                {% comment %} <main class="main">
+                                    <section class="pane left">
+                                        <pre id="CodeBlock" data-lang='html'></pre>
+                                        <script src="{% static 'assets/js/editor.js' %}"> </script>
+                                    </section>
+                                    <div class="gutter"></div>
+                                    <section class="pane right">
+                                        <iframe id='output' title="output" sandbox="allow-scripts"></iframe>
+                                    </section>
+                                </main> {% endcomment %}
+                                <div class="wrapper">
+  
+                                    <div class="pane left">
+                                        <pre id="CodeBlock" data-lang='html'></pre>
+                                        <script src="{% static 'assets/js/editor.js' %}"> </script>
+                                    </div>
+                                    
+                                    <div class="pane right">
+                                        <iframe id='output' title="output" sandbox="allow-scripts"></iframe>
+                                      <div class="gutter"></div>
+                                    </div>
+                                  </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,4 +85,5 @@
 {% block javascripts %}
 <script src="/static/assets/js/menu.min.js"></script>
 <script src="/static/assets/js/dark-mode.js"></script>
+<script src="{% static 'assets/js/editor-resize.js' %}"> </script>
 {% endblock javascripts %}

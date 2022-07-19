@@ -28,16 +28,18 @@ button {
     height: 100vh;
 }
 #CodeBlock {
-    width: 40vw;
+    width: auto;
     height: 100vh;
 }
+
+
 /* #CodeBlock {
     width: 50vw;
     height: 814px;
 } */
 #output {
-    width: 60vw;
     height: 100vh;
+    width: 50vw;
 }
 #theme-indicator {
   cursor: pointer; }
@@ -45,6 +47,9 @@ button {
 .pcoded-header label {
   color: #3f4d67; }
 
+.monaco-editor.no-user-select.mac.showUnused.showDeprecated.vs {
+    padding-top: 30px;
+}
 
 body.dark .pcoded-navbar, body.dark .navbar-brand {
   background-color: #2C394B; 
@@ -191,3 +196,35 @@ body.dark .pcoded-header .main-search.open .input-group .search-close {
 }
 
 /*# sourceMappingURL=dark.css.map */
+
+
+
+
+
+
+     
+   
+.wrapper {
+    height: 100vh;
+    border: 6px solid #666;
+    display: flex;
+}
+
+.pane {
+    min-width: 20vw;
+}
+
+
+.right {
+    position: relative;
+}
+
+.gutter {
+    width: 10px;
+    height: 100%;
+    background: #666;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: col-resize;
+}
