@@ -27,20 +27,6 @@ button {
     display: flex;
     height: 100vh;
 }
-#CodeBlock {
-    width: auto;
-    height: 100vh;
-}
-
-
-/* #CodeBlock {
-    width: 50vw;
-    height: 814px;
-} */
-#output {
-    height: 100vh;
-    width: 50vw;
-}
 #theme-indicator {
   cursor: pointer; }
 
@@ -203,14 +189,24 @@ body.dark .pcoded-header .main-search.open .input-group .search-close {
 
 
      
-   
+#CodeBlock {
+    width: auto;
+    height: 100vh;
+}
+
+#output {
+    height: 100vh;
+    width: 50vw;
+}
 .wrapper {
     height: 100vh;
-    border: 6px solid #666;
+    border: 2px solid #888;
     display: flex;
+    max-width: 100vw;
 }
 
 .pane.right {
+    max-width: 100%;
     width: 100%;
 }
 
@@ -220,7 +216,7 @@ body.dark .pcoded-header .main-search.open .input-group .search-close {
 }
 
 .gutter {
-    width: 10px;
+    width: 15px;
     height: 100%;
     background: #666;
     position: absolute;

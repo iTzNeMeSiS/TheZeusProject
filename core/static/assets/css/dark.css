@@ -17,6 +17,7 @@ body.dark .icon, body.dark a, body.dark span, body.dark p, body.dark .feather,
 body.dark .pcoded-header .input-group .input-group-text, body.dark .pcoded-header a,
 body.dark .pcoded-header dropdown-toggle {
     color: white; 
+    fill: white;
 }
 
 body.dark .pcoded-header .main-search.open .input-group {

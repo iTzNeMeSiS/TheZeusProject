@@ -2511,6 +2511,7 @@ p.text-muted {
 }
 .pcoded-navbar a {
   color: #a9b7d0;
+  fill: #a9b7d0;
 }
 .pcoded-navbar .navbar-content,
 .pcoded-navbar .navbar-wrapper {
@@ -2702,6 +2703,7 @@ p.text-muted {
 }
 .pcoded-navbar .pcoded-inner-navbar li.active > a, .pcoded-navbar .pcoded-inner-navbar li:focus > a, .pcoded-navbar .pcoded-inner-navbar li:hover > a {
   color: #1dc4e9;
+  fill: #1dc4e9;
 }
 .pcoded-navbar .pcoded-inner-navbar li .pcoded-submenu > li.active > a:before, .pcoded-navbar .pcoded-inner-navbar li .pcoded-submenu > li:focus > a:before, .pcoded-navbar .pcoded-inner-navbar li .pcoded-submenu > li:hover > a:before {
   background: #1dc4e9;
