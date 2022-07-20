@@ -122,7 +122,7 @@
                         </div>
                         {% endif %}
                         <ul class="pro-body">
-                            <li><a href="/language" class="dropdown-item">
+                            <li><a href="{% url 'language' %}" class="dropdown-item">
                                 <i class="feather icon-globe"></i> {% trans 'Language' %}</a>
                             </li>
                             {% if request.user.is_authenticated %}

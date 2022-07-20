@@ -1,9 +1,10 @@
 {% load i18n %}
+{% get_current_language as language_code %}
 <!-- [ navigation menu ] start -->
 <nav class="pcoded-navbar">
     <div class="navbar-wrapper">
         <div class="navbar-brand header-logo">
-            <a href="/" class="b-brand">
+            <a href="{% url 'home' %}" class="b-brand">
                 <div class="b-bg">
                     {% comment %} <i class="feather icon-home"></i> {% endcomment %}
                     <img src="/static/assets/img/brand/light.svg" height="50" class="mb-3" alt="The Zeus Project Logo">
@@ -20,7 +21,7 @@
                 </li>
                 <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" 
                     class="nav-item {% if 'index' in segment %} active {% endif %}">
-                    <a href="/dashboard" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span
+                    <a href="{% url 'dashboard' %}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span
                             class="pcoded-mtext">{% trans 'Dashboard' %}</span></a>
                 </li>
                 {% endif %}

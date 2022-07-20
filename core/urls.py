@@ -1,9 +1,10 @@
 # -*- encoding: utf-8 -*-
 
+from app import views
 from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.static import static
-from django.urls import path, include  # add this
+from django.urls import path, include, re_path  # add this
 from django.conf.urls.i18n import i18n_patterns
 from app.views import ChangeLanguageView
 
@@ -14,6 +15,8 @@ urlpatterns = [
 
 
 urlpatterns += i18n_patterns(
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('language/', ChangeLanguageView.as_view(), name='change_language'),
     path('', include("customers.urls")),  # Django customers route
     path('', include("app.urls")),  # UI Kits Html files
     path('', include("authentication.urls")),  # Auth routes - login / register
@@ -22,9 +25,8 @@ urlpatterns += i18n_patterns(
     path('', include("practice.urls")),
     path('', include("languages.urls")),
     # path('', IndexPageView.as_view(), name='index'),
-    path('i18n/', include('django.conf.urls.i18n')),
-    path('language/', ChangeLanguageView.as_view(), name='change_language'),
-    prefix_default_language=True, 
+    re_path(r'^.*\.html', views.pages, name='pages'),
+    prefix_default_language=False
 )
 
 if settings.DEVEL:

@@ -62,10 +62,10 @@
             <ul class="menu">
               <li class="logo"><a class="text-white" href="#">The Zeus Project</a></li>
               {% if request.user.is_authenticated %}
-              <li class="item"><a href="/dashboard">{% trans 'Dashboard' %}</a></li>
+              <li class="item"><a href="{% url 'dashboard' %}">{% trans 'Dashboard' %}</a></li>
               {% else %}
-              <li class="item"><a href="/foundations">{% trans 'Foundations' %}</a></li>
-              <li class="item"><a href="/paths">{% trans 'Paths' %}</a></li>
+              <li class="item"><a href="{% url 'foundations' %}">{% trans 'Foundations' %}</a></li>
+              <li class="item"><a href="{% url 'paths' %}">{% trans 'Paths' %}</a></li>
               {% endif %}
               {% if request.user.is_authenticated %}
               <li class="item"><a href="{% url 'profile' %}">{% trans 'Settings' %}</a></li>
