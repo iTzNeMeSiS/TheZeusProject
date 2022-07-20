@@ -14,6 +14,7 @@
         </div>
         <div class="navbar-content scroll-div">
             <ul class="nav pcoded-inner-navbar">
+                {% if request.user.is_authenticated %}
                 <li class="nav-item pcoded-menu-caption">
                     <label>{% trans 'Navigation' %}</label>
                 </li>
@@ -22,6 +23,7 @@
                     <a href="/dashboard" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span
                             class="pcoded-mtext">{% trans 'Dashboard' %}</span></a>
                 </li>
+                {% endif %}
                 {% comment %} <li data-username="Profile Page" 
                     class="nav-item {% if 'profile' in segment %} active {% endif %}">
                     <a href="/profile" class="nav-link">
@@ -232,9 +234,11 @@
                         </span>
                         <span class="pcoded-mtext">{% trans 'Support' %}</span>
                     </a>
+                    {% if request.user.is_authenticated %}
                     <a href="{% url 'logout' %}" class="nav-link">
                         <span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">{% trans 'Logout' %}</span>
                     </a>
+                    {% endif %}
                 </li>                
             </ul>
         </div>

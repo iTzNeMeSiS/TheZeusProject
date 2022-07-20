@@ -111,6 +111,7 @@
                         <i class="icon feather icon-settings"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
+                        {% if request.user.is_authenticated %}
                         <div class="pro-head">
                             <img class="user-avatar md-avatar rounded-circle" alt=" " src="{{ user.profile.get_avatar }}">                            <span>
                                 {{ request.user.username }}    
@@ -119,10 +120,12 @@
                                 <i class="feather icon-log-out"></i>
                             </a>
                         </div>
+                        {% endif %}
                         <ul class="pro-body">
                             <li><a href="/language" class="dropdown-item">
                                 <i class="feather icon-globe"></i> {% trans 'Language' %}</a>
                             </li>
+                            {% if request.user.is_authenticated %}
                             <li><a href="{% url 'profile' %}" class="dropdown-item"><i class="feather icon-settings"></i>
                                 {% trans 'Settings' %}</a></li>
                             {% comment %} <li><a href="/profile" class="dropdown-item"><i class="feather icon-user"></i>
@@ -130,6 +133,7 @@
                             <li><a href="{% url 'logout' %}" class="dropdown-item">
                                 <i class="feather icon-lock"></i> {% trans 'Logout' %}</a>
                             </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>

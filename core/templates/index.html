@@ -61,7 +61,12 @@
         <nav>
             <ul class="menu">
               <li class="logo"><a class="text-white" href="#">The Zeus Project</a></li>
+              {% if request.user.is_authenticated %}
               <li class="item"><a href="/dashboard">{% trans 'Dashboard' %}</a></li>
+              {% else %}
+              <li class="item"><a href="/foundations">{% trans 'Foundations' %}</a></li>
+              <li class="item"><a href="/paths">{% trans 'Paths' %}</a></li>
+              {% endif %}
               {% if request.user.is_authenticated %}
               <li class="item"><a href="{% url 'profile' %}">{% trans 'Settings' %}</a></li>
               {% endif %}
@@ -162,13 +167,6 @@
                                         <div class="card-header border-0 text-center pb-0">
                                             <h2 class="mb-0 h5">{% trans 'Create Account' %}</h2>                               
                                         </div>
-                                        <p>
-                                            {% if msg %}
-                                                {{ msg | safe }}
-                                            {% else %}
-                                                Add your credentials
-                                            {% endif %}                                     
-                                        </p> 
                                         <div class="card-body">
                                             <form method="post" action="{% url 'register' %}">
                             

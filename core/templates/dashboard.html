@@ -17,6 +17,7 @@
                     <div class="main-body">
                         <div class="page-wrapper">
                             <!-- [ Main Content ] start -->
+                            {% if request.user.is_authenticated %}
                             <h3 class="dash-heading pb-5">Dashboard</h3>
                                 <div class="row dashboard">
                                     <div class="col-12 col-xl-8">
@@ -30,6 +31,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                {% endif %}
                                 {% comment %} Start Skills Progress {% endcomment %}
                                 <h4 class="prog dash-heading pb-5">Skills Progress</h4>
                                 <div class="row dashboard">
@@ -39,7 +41,7 @@
                                                 <div class="prog-container-item">
                                                     <div class="progress-container">
                                                         <div class="progress-item">
-                                                                <div class="progress" data-percentage="50">
+                                                                <div class="progress" data-percentage="0">
                                                                 <span class="progress-left">
                                                                     <span class="progress-bar"></span>
                                                                 </span>
@@ -48,7 +50,7 @@
                                                                 </span>
                                                                 <div class="progress-value">
                                                                 <div>
-                                                                    50%<br>
+                                                                    0%<br>
                                                                     <span>completed</span>
                                                                 </div>
                                                             </div>
