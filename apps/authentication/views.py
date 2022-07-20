@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.forms.utils import ErrorList
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import LoginForm, SignUpForm
 
 
@@ -37,25 +37,25 @@ def login_view(request):
 
 
 def register_user(request):
-    msg = None
-    success = False
-
+    # msg = None
+    # success = False
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get("username")
-            raw_password = form.cleaned_data.get("password1")
-            user = authenticate(username=username, password=raw_password)
+            new_user = form.save()
+            # messages.info(request, "Thanks for registering. You are now logged in.")
+            new_user = authenticate(username=form.cleaned_data['username'],
+                                    password=form.cleaned_data['password1'],
+                                    )
+            login(request, new_user)
+            return HttpResponseRedirect("/settings/")
+            # msg = 'User created - please <a href="/login">login</a>.'
+            # success = True
+            # return redirect("/login/")
 
-            msg = 'User created - please <a href="/login">login</a>.'
-            success = True
-
-            return redirect("/login/")
-
-        else:
-            msg = 'Form is not valid'
+        # else:
+        #     msg = 'Form is not valid'
     else:
         form = SignUpForm()
 
-    return render(request, "accounts/register.html", {"form": form, "msg": msg, "success": success})
+    # return render(request, "accounts/register.html", {"form": form, "msg": msg, "success": success})

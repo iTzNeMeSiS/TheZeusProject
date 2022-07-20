@@ -162,6 +162,13 @@
                                         <div class="card-header border-0 text-center pb-0">
                                             <h2 class="mb-0 h5">{% trans 'Create Account' %}</h2>                               
                                         </div>
+                                        <p>
+                                            {% if msg %}
+                                                {{ msg | safe }}
+                                            {% else %}
+                                                Add your credentials
+                                            {% endif %}                                     
+                                        </p> 
                                         <div class="card-body">
                                             <form method="post" action="{% url 'register' %}">
                             
