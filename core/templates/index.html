@@ -56,7 +56,7 @@
 </head>
 
 <body>
-
+{% comment %} START HEADER {% endcomment %}
     <header class="header-global">
         <nav>
             <ul class="menu">
@@ -88,13 +88,14 @@
                                         <span>{% trans 'Login here using your username and password' %}</span>   
                                     </div>
                                     <div class="card-body">
-                                        <form action="#" class="mt-4">
+                                        <form action="{% url 'login' %}" method="POST" class="mt-4">
+                                            {% csrf_token %}
                                             <!-- Form -->
                                             <div class="form-group mb-4">
-                                                <label for="login_email">{% trans 'Your Email' %}</label>
+                                                <label for="login_email">{% trans 'Your Username' %}</label>
                                                 <div class="input-group">
                                                     <span class="input-group-text" id="basic-addon1"><span class="fas fa-envelope"></span></span>
-                                                    <input type="email" class="form-control" placeholder="{% trans 'example@email.com' %}" id="login_email" required="">
+                                                    {{ signin_form.username }}
                                                 </div>  
                                             </div>
                                             <!-- End of Form -->
@@ -104,21 +105,21 @@
                                                     <label for="login_password">{% trans 'Your Password' %}</label>
                                                     <div class="input-group">
                                                         <span class="input-group-text" id="basic-addon2"><span class="fas fa-unlock-alt"></span></span>
-                                                        <input type="password" placeholder="{% trans 'Password' %}" class="form-control" id="login_password" required="">
+                                                        {{ signin_form.password }}
                                                     </div>  
                                                 </div>
                                                 <!-- End of Form -->
                                                 <div class="d-flex justify-content-between align-items-center mb-4">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="remember">
-                                                        <label class="form-check-label" for="remember">
-                                                            {% trans 'Remember me' %}
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                                                        <label class="form-check-label" for="defaultCheck5">
+                                                          Remember me
                                                         </label>
                                                     </div>
                                                     <div><a href="#" class="small text-right">{% trans 'Lost password?' %}</a></div>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-block btn-primary">{% trans 'Sign in' %}</button>
+                                            <button type="submit" value="Submit" name="login" class="btn btn-block btn-primary">Sign in</button>
                                         </form>
                                         <div class="mt-3 mb-4 text-center">
                                             <span class="font-weight-normal">{% trans 'or login with' %}</span>
@@ -162,43 +163,57 @@
                                             <h2 class="mb-0 h5">{% trans 'Create Account' %}</h2>                               
                                         </div>
                                         <div class="card-body">
-                                            <form action="#">
+                                            <form method="post" action="{% url 'register' %}">
+                            
+                                                {% csrf_token %}
+                
                                                 <!-- Form -->
                                                 <div class="form-group mb-4">
-                                                    <label for="email">{% trans 'Your Email' %}</label>
+                                                    <label for="email">Username</label>
                                                     <div class="input-group">
-                                                        <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
-                                                        <input type="email" class="form-control" placeholder="{% trans 'example@email.com' %}" id="email" required="">
-                                                    </div>  
+                                                        <span class="input-group-text" id="basic-addon3"><span class="fas fa-user-shield"></span></span>
+                                                        {{ signup_form.username }}
+                                                    </div>
+                                                    <span class="text-error">{{ signup_form.username.errors }}</span>
                                                 </div>
                                                 <!-- End of Form -->
                                                 <div class="form-group">
+                
                                                     <!-- Form -->
                                                     <div class="form-group mb-4">
-                                                        <label for="password">{% trans 'Your Password' %}</label>
+                                                        <label for="password">Password</label>
                                                         <div class="input-group">
                                                             <span class="input-group-text" id="basic-addon4"><span class="fas fa-unlock-alt"></span></span>
-                                                            <input type="password" placeholder="{% trans 'Password' %}" class="form-control" id="password" required="">
+                                                            {{ signup_form.password1 }}
                                                         </div>  
+                                                        <span class="text-error">{{ signup_form.password1.errors }}</span>
                                                     </div>
                                                     <!-- End of Form -->
+                
                                                     <!-- Form -->
                                                     <div class="form-group mb-4">
-                                                        <label for="password_confirm">{% trans 'Confirm Password' %}</label>
+                                                        <label for="password">Password Check</label>
                                                         <div class="input-group">
-                                                            <span class="input-group-text" id="basic-addon5"><span class="fas fa-unlock-alt"></span></span>
-                                                            <input type="password" placeholder="{% trans 'Confirm Password' %}" class="form-control" id="password_confirm" required="">
+                                                            <span class="input-group-text" id="basic-addon4"><span class="fas fa-unlock-alt"></span></span>
+                                                            {{ signup_form.password2 }}
                                                         </div>  
+                                                        <span class="text-error">{{ signup_form.password2.errors }}</span>
                                                     </div>
-                                                    <!-- End of Form -->
-                                                    <div class="form-check mb-4">
-                                                        <input class="form-check-input" type="checkbox" value="" id="terms">
-                                                        <label class="span-login form-check-label" for="terms">
-                                                            {% trans 'I agree to the' %} <a id="black" href="#">{% trans 'terms and conditions' %}</a>
-                                                        </label>
+                
+                                                    <div class="d-flex justify-content-between align-items-center mb-4">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                                                            <label class="form-check-label" for="defaultCheck5">
+                                                                {% trans 'I agree to the' %} <a id="black" href="#">{% trans 'terms and conditions' %}</a>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <a href="{% url 'login' %}" class="small text-right">Login</a>
+                                                        </div>
                                                     </div>
+                                                    
                                                 </div>
-                                                <button type="submit" class="btn btn-block btn-primary">{% trans 'Sign up' %}</button>
+                                                <button type="submit" name="register" class="btn btn-block btn-primary">Sign up</button>
                                             </form>
                                             <div class="mt-3 mb-4 text-center">
                                                 <span class="font-weight-normal">{% trans 'or' %}</span>
@@ -233,51 +248,17 @@
             </ul>
           </nav>
     </header>
+{% comment %} END HEADER {% endcomment %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ {% comment %} START MAIN {% endcomment %}
     <main style="height: 100vh;">
-
         <div class="preloader bg-soft flex-column justify-content-center align-items-center">
             <img class="loader-element animate__animated animate__jackInTheBox" src="/static/assets/img/brand/light.svg" height="120" alt="Volt logo">
         </div>
-
-
-
-        {% comment %} <h1>{% trans 'Hello, my name is Dre' %}</h1>
-        <h1>{% trans 'How are you?' %}</h1> {% endcomment %}
-
-
     </main>
+{% comment %} END MAIN {% endcomment %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% comment %} START FOOTER {% endcomment %}
     <footer class="footer py-6 bg-primary text-white">
         <div class="container">
             <div class="row">
@@ -358,7 +339,7 @@
             </div>
         </div>
     </footer>
-
+{% comment %} END FOOTER {% endcomment %}
     {% include 'includes/index-scripts.html' %}
 
 </body>
